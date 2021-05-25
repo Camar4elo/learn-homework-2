@@ -1,3 +1,4 @@
+from datetime import timedelta, date, datetime
 """
 Домашнее задание №2
 
@@ -9,19 +10,17 @@
 """
 
 def print_days():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    dt = date.today()
+    delta = timedelta(days = 1)
+    print(dt - delta)
+    print(dt)
+    delta = timedelta(days = 30)
+    print(dt - delta)
 
 
 def str_2_datetime(date_string):
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    date_dt = datetime.strptime(date_string, '%d/%m/%y %H:%M:%S.%f')
+    return date_dt
 
 if __name__ == "__main__":
     print_days()
