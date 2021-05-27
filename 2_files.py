@@ -12,18 +12,15 @@
 """
 
 def main():
-    with open('referat.txt', 'r', encoding='UTF-8') as file_1:
-        line_counter = 0
-        word_counter = 0
-        for line in file_1:
-            line = line.replace('\n', '')
-            line_counter += len(line)
-            word_counter += len(line.split())
-            line = line.replace('.', '!')
-            with open('referat2.txt', 'a', encoding='UTF-8') as file_2:
-                file_2.write(f'{line}\n')
-        print(line_counter)
-        print(word_counter)
+    with open('referat.txt', 'r', encoding='utf-8') as file_1:
+        content = file_1.read()
+        updated_content = content.replace('\n', '')
+        print(len(updated_content))
+        print(len(updated_content.split()))
+        content = content.replace('.', '!')
+    with open('referat2.txt', 'w', encoding='utf-8') as file_2:
+        file_2.write(f'{content}')
+    
 
 if __name__ == "__main__":
     main()

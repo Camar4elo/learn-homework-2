@@ -60,9 +60,7 @@ groups = [
     ['Вася', 'Маша'],
     ['Оля', 'Петя', 'Гриша'],
 ]
-gr_count = 0
-st_count = 0
+group_number = 0
 for group in groups:
-    gr_count += 1
-    print(f'Группа {gr_count}: {", ".join(groups[st_count])}')
-    st_count += 1
+    group_number += 1
+    print(f'Группа {group_number}: {", ".join(group)}')

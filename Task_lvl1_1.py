@@ -24,17 +24,14 @@ print(len(sentence.split()))
 
 
 # Вывести первую букву каждого слова на отдельной строке
-sentence = 'Мы приехали в гости'.split()
-for word in sentence:
+words_list = 'Мы приехали в гости'.split()
+for word in words_list:
     print(word[0])
 
 
 
 # Вывести усреднённую длину слова.
-sentence = 'Мы приехали в гости'.split()
-average_len = 0
-count = 0
-for word in sentence:
-    count += 1
-    average_len += len(word)
-print(average_len / count)
+sentence = 'Мы приехали в гости'
+words_list = sentence.split()
+average_len = len(sentence.replace(' ', ''))
+print(average_len / len(words_list))

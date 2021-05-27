@@ -14,12 +14,12 @@ students = [
 students_count = {}
 for student in students:
     name = student.get('first_name')
-    count = students.count({'first_name': f'{name}'})
-    if name in students_count:
-        continue
+    if name not in students_count:
+        students_count[name] = 1
     else:
-        students_count[f'{name}'] = count
-        print(f'{name}: {count}')
+      students_count[name] += 1
+for name in students_count:
+    print(f'{name}: {students_count.get(name)}')
 
 
 
@@ -39,14 +39,20 @@ students = [
   {'first_name': 'Оля'},
 ]
 
-max_count = 0
+students_count = {}
 for student in students:
     name = student.get('first_name')
-    count = students.count({'first_name': f'{name}'})
-    if count > max_count:
-        max_count = count
-        frequent_name = name
-print(f'Самое частое имя среди учеников: {frequent_name}')
+    if name not in students_count:
+        students_count[name] = 1
+    else:
+        students_count[name] += 1
+count = 0
+for name in students_count:
+    student_value = students_count.get(name)
+    if student_value > count:
+        count += 1
+        student = name
+print(f'Самое частое имя среди учеников: {student}')
 
 # Пример вывода:
 # Самое частое имя среди учеников: Маша
@@ -64,6 +70,7 @@ school_students = [
     {'first_name': 'Оля'},
   ]
 ]
+
 class_number = 0
 for school_class in school_students:
     max_count = 0
@@ -133,14 +140,15 @@ for school_class in school:
         name = students.get('first_name')
         if is_male.get(name):
             boys += 1
-            if max_boys < boys:
-                max_boys = boys
-                boys_answer = f'Больше всего мальчиков в классе {class_number}'
         else:
             girls += 1
-            if max_girls < girls:
-                max_girls = girls
-                girls_answer = f'Больше всего девочек в классе {class_number}'
+    if max_boys < boys:
+        max_boys = boys
+        boys_answer = f'Больше всего мальчиков в классе {class_number}'
+    if max_girls < girls:
+        max_girls = girls
+        girls_answer = f'Больше всего девочек в классе {class_number}'
+
 print(f'{boys_answer}\n{girls_answer}')
 
 
