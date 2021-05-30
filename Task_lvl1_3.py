@@ -50,7 +50,7 @@ count = 0
 for name in students_count:
     student_value = students_count.get(name)
     if student_value > count:
-        count += 1
+        count = student_value
         student = name
 print(f'Самое частое имя среди учеников: {student}')
 

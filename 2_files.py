@@ -14,9 +14,8 @@
 def main():
     with open('referat.txt', 'r', encoding='utf-8') as file_1:
         content = file_1.read()
-        updated_content = content.replace('\n', '')
-        print(len(updated_content))
-        print(len(updated_content.split()))
+        print(len(content))
+        print(len(content.split()))
         content = content.replace('.', '!')
     with open('referat2.txt', 'w', encoding='utf-8') as file_2:
         file_2.write(f'{content}')
